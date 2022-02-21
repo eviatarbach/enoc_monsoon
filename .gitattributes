@@ -1,0 +1,8 @@
+data/all* filter=lfs diff=lfs merge=lfs -text
+data/nn* filter=lfs diff=lfs merge=lfs -text
+data/nn_past/* filter=lfs diff=lfs merge=lfs -text
+data/nn_future_era/* filter=lfs diff=lfs merge=lfs -text
+data/nn_centered_era/* filter=lfs diff=lfs merge=lfs -text
+data/nn_centered_era/*/* filter=lfs diff=lfs merge=lfs -text
+data/nn_future_era/*/* filter=lfs diff=lfs merge=lfs -text
+data/nn_past/*/* filter=lfs diff=lfs merge=lfs -text
