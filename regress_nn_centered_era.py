@@ -29,10 +29,10 @@ output = Dense(2)(dense_layer_3)
 model = Model(inputs=input_layer, outputs=output)
 model.compile(loss="mean_squared_error", optimizer="adam", metrics=["mean_squared_error"])
 
-history = model.fit(X_train, y_train, epochs=200, verbose=1)
+history = model.fit(X_train, y_train, epochs=500, verbose=1)
 
-pickle.dump(sc, open("scaler_centered_era", "wb"))
+pickle.dump(sc, open("scaler_centered_era2", "wb"))
 
-model.save('nn_centered_era')
+model.save('nn_centered_era2')
 
 #print(model.evaluate(X_test, y_test))

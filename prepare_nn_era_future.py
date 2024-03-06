@@ -10,11 +10,11 @@ n_pcs = 2
 D = 1190
 year0 = 1950
 
-anomalies = xarray.open_dataarray('era5_anomalies.nc')
+anomalies = xarray.open_dataarray('data/era5_anomalies.nc')
 x = anomalies.sel(time=anomalies.time.dt.year <= 1992).stack(stacked=['lat', 'lon']).values
 x = x.reshape(n_years_total, n_days, D)
 pcs = xarray.open_dataset('pcs.h5')["pcs"].values.T
-pcs = pcs.reshape(115, n_days, n_pcs)
+pcs = pcs.reshape(107, n_days, n_pcs)
 
 n_samples = n_years_training*(n_days - 122)
 
