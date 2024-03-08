@@ -9,11 +9,11 @@ n_pcs = 2
 D = 1190
 year0 = 1950
 
-anomalies = xarray.open_dataarray('era5_anomalies.nc')
+anomalies = xarray.open_dataarray('data/era5_anomalies.nc')
 anomalies = anomalies.loc[anomalies.time.dt.year < 2010]
 x = anomalies.stack(stacked=['lat', 'lon']).values
 x = x.reshape(n_years_total, n_days, D)
-pcs = xarray.open_dataset('pcs_era5.h5')["pcs"].values.T
+pcs = xarray.open_dataset('data/pcs_era5.h5')["pcs"].values.T
 pcs = pcs.reshape(n_years_total, n_days, n_pcs)
 
 n_samples = n_years_training*(n_days - 122)
@@ -30,5 +30,5 @@ for year in range(year0, year0 + n_years_training):
 
 x_new = numpy.reshape(x_new, (n_samples, -1))
 
-xarray.DataArray(x_new).to_netcdf("x_training_past_era.nc")
-xarray.DataArray(pcs_new).to_netcdf("pcs_training_past_era.nc")
+xarray.DataArray(x_new).to_netcdf("data/x_training_past_era.nc")
+xarray.DataArray(pcs_new).to_netcdf("data/pcs_training_past_era.nc")

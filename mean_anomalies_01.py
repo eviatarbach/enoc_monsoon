@@ -1,6 +1,6 @@
 import xarray
 
-obs = xarray.open_dataset('data/prec_2021.nc')
+obs = xarray.open_dataset('data/prec.nc')
 clim = obs["p"].loc[(obs.time.dt.month <= 11) & (obs.time.dt.month >= 3) & (obs.time.dt.year <= 2007) & (obs.time.dt.year >= 1950)]
 clim_grouped = clim.assign_coords(dayofyear=clim.time.dt.strftime("%m-%d")).groupby('dayofyear')
 clim_mean = clim_grouped.mean()

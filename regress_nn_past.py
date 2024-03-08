@@ -9,8 +9,8 @@ import tensorflow as tf
 from tensorflow.keras.layers import Input, Dense, Activation, Dropout
 from tensorflow.keras.models import Model
 
-x = xarray.open_dataarray('data/x_training_future_era.nc')
-pcs = xarray.open_dataarray('data/pcs_training_future_era.nc')
+x = xarray.open_dataarray('data/x_training_past.nc')
+pcs = xarray.open_dataarray('data/pcs_training_past.nc')
 
 sc = StandardScaler()
 
@@ -28,6 +28,6 @@ model.compile(loss="mean_squared_error", optimizer="adam", metrics=["mean_square
 
 history = model.fit(X_train, y_train, epochs=500, verbose=1)
 
-pickle.dump(sc, open("data/scaler_future_era", "wb"))
+pickle.dump(sc, open("data/scaler_past", "wb"))
 
-model.save('data/nn_future_era')
+model.save('data/nn_past')
