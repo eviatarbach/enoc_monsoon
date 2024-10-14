@@ -1,6 +1,6 @@
 # Code for "Improved subseasonal prediction of South Asian monsoon rainfall using data-driven forecasts of oscillatory modes"
 
-This repository contains the code for the paper "Improved subseasonal prediction of South Asian monsoon rainfall using data-driven forecasts of oscillatory modes" by Eviatar Bach, V. Krishnamurthy, Safa Mote, Jagadish Shukla, A. Surjalal Sharma, Eugenia Kalnay, and Michael Ghil.
+This repository contains the code for the *PNAS* paper ["Improved subseasonal prediction of South Asian monsoon rainfall using data-driven forecasts of oscillatory modes"](http://doi.org/10.1073/pnas.2312573121) by Eviatar Bach, V. Krishnamurthy, Safa Mote, Jagadish Shukla, A. Surjalal Sharma, Eugenia Kalnay, and Michael Ghil.
 
 All the code was written by Eviatar Bach. You can contact me with any questions at eviatarbach@protonmail.com.
 
